@@ -313,7 +313,8 @@ module Devise
     end
 
     def get
-      ActiveSupport::Dependencies.constantize(@name)
+      # Suggested by https://edgeguides.rubyonrails.org/upgrading_ruby_on_rails.html#activesupport-dependencies-private-api-has-been-deleted
+      @name.constantize
     end
   end
 
